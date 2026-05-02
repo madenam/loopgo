@@ -1,0 +1,4 @@
+python-dotenv==1.2.2
+python-telegram-bot[job-queue]==22.7
+tortoise-orm==1.1.7
+aiosqlite==0.21.0

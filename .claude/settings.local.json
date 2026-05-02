@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Content *)",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"import pkg_resources; [print\\(d\\) for d in pkg_resources.working_set]\")",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"import telegram; print\\(telegram.__version__\\)\")",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"from telegram.ext import Application; print\\('JobQueue support:', hasattr\\(Application, 'job_queue'\\)\\)\")",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"from telegram.ext import ConversationHandler; print\\('ConversationHandler available'\\)\")",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"import apscheduler; print\\(apscheduler.__version__\\)\" 2>&1)",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"from telegram.ext import JobQueue; print\\('built-in JobQueue'\\); import inspect; src = inspect.getfile\\(JobQueue\\); print\\(src\\)\")",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"from telegram.ext._jobqueue import JobQueue; import inspect; methods = [m for m in dir\\(JobQueue\\) if not m.startswith\\('_'\\)]; print\\(methods\\)\")",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"from telegram.ext._jobqueue import JobQueue; import inspect; print\\(inspect.signature\\(JobQueue.run_daily\\)\\)\")",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"from telegram.ext import ConversationHandler; print\\(ConversationHandler.END\\)\")",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"from telegram import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton; print\\('All keyboard classes available'\\)\")",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"from telegram import ReplyKeyboardMarkup, KeyboardButton; print\\('ReplyKeyboardMarkup available'\\); from telegram.ext import filters; print\\(dir\\(filters.Regex.__class__\\)\\)\" 2>&1 | Select-Object -First 5)",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"from telegram.ext import CallbackQueryHandler; print\\('CallbackQueryHandler available'\\)\")",
+      "PowerShell(& \"C:\\\\Users\\\\toxfi\\\\Desktop\\\\loopgo\\\\venv\\\\Scripts\\\\python.exe\" -c \"from telegram.ext import ApplicationBuilder; import inspect; sig = inspect.signature\\(ApplicationBuilder.post_init\\); print\\(sig\\)\")"
+    ]
+  }
+}

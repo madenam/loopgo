@@ -1,4 +1,5 @@
 import datetime as dt
+from zoneinfo import ZoneInfo
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes, ConversationHandler
 
@@ -8,6 +9,7 @@ from db.models import BookingStatus
 from helpers.config import configs
 
 ADD_SVC_NAME, ADD_SVC_DURATION, ADD_SVC_PRICE = 20, 21, 22
+APP_TIMEZONE = ZoneInfo(configs["TIMEZONE"])
 
 
 def _is_admin(user_id: int) -> bool:
@@ -193,9 +195,9 @@ async def confirm_booking(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             f"⏰ Vaqt: {booking.time.strftime('%H:%M')}"
         ),
     )
-    booking_dt = dt.datetime.combine(booking.date, booking.time)
+    booking_dt = dt.datetime.combine(booking.date, booking.time, tzinfo=APP_TIMEZONE)
     remind_at = booking_dt - dt.timedelta(hours=1)
-    now = dt.datetime.now(dt.timezone.utc)
+    now = dt.datetime.now(APP_TIMEZONE)
     if remind_at > now:
         delay = (remind_at - now).total_seconds()
         context.job_queue.run_once(
